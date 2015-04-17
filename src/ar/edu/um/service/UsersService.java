@@ -22,4 +22,10 @@ public class UsersService {
 
 		return usersDao.getUsers();
 	}
+	
+	public void create(User user) {
+		usersDao.create(user);
+		
+	}
+
 }

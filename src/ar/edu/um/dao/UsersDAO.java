@@ -28,7 +28,7 @@ public class UsersDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
 
-		return jdbc.queryForObject("select * from user where id = :id", params,
+		return jdbc.queryForObject("select * from users where id = :id", params,
 				new RowMapper<User>() {
 
 					public User mapRow(ResultSet rs, int rowNum)
@@ -52,7 +52,7 @@ public class UsersDAO {
 	public boolean create(User user) {
 
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(user);
-		return jdbc.update("insert into user (username, password, fullname, email) values (:username, :password, :fullname, :email)", params) == 1;
+		return jdbc.update("insert into users (username, password, fullname, email) values (:username, :password, :fullname, :email)", params) == 1;
 
 	}
 	
@@ -64,7 +64,7 @@ public class UsersDAO {
 	}
 	public List<User> getUsers() {
 
-		return jdbc.query("select * from user", new RowMapper<User>() {
+		return jdbc.query("select * from users", new RowMapper<User>() {
 
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 
@@ -87,7 +87,7 @@ public class UsersDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
 		
-		return jdbc.update("delete from user where id = :id", params) == 1;
+		return jdbc.update("delete from users where id = :id", params) == 1;
 		
 	}
 

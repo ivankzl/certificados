@@ -8,9 +8,12 @@
 		<security:authentication-provider>
 
 			<security:user-service>
-				<security:user name="ivan" authorities="admin" password="ivan" />
+				<security:user name="admin" authorities="admin" password="admin" /> 
 			</security:user-service>
 
+		</security:authentication-provider>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 
@@ -23,7 +26,9 @@
 		-->
 		<security:intercept-url pattern="/" access="permitAll" />
 		<security:intercept-url pattern="/users" access="isAuthenticated()" />
-		<security:intercept-url pattern="/" access="denyAll" />
+		<security:intercept-url pattern="/create" access="isAuthenticated()" />
+		<security:intercept-url pattern="/usercreated" access="isAuthenticated()" />
+		<security:intercept-url pattern="/**" access="denyAll" />
 	
 		<!-- vamos a agregar un login -->
 		<security:form-login />
