@@ -9,7 +9,7 @@
 	<configs>
 		<config>src/ar/edu/um/config/dao-context.xml</config>
 		<config>src/ar/edu/um/config/service-context.xml</config>
-		<config>WebContent/WEB-INF/users-servlet.xml</config>
+		<config>WebContent/WEB-INF/cursos-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
