@@ -28,7 +28,7 @@ public class UsersDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
 
-		return jdbc.queryForObject("select * from users where id = :id", params,
+		return jdbc.queryForObject("select * from user where id = :id", params,
 				new RowMapper<User>() {
 
 					public User mapRow(ResultSet rs, int rowNum)

@@ -58,6 +58,19 @@ public class UsersController {
 	@RequestMapping("/alter")
 	public String createOffer(Model model) {
 		model.addAttribute("user", new User());
+		
 		return "alter";
+	}
+	
+	@RequestMapping(value="/doalter", method=RequestMethod.POST)
+	public String doAlter(Model model, @Valid User user, BindingResult result) {
+		if (result.hasErrors()){
+			System.out.println("no se valido el formulario");
+			return "create";
+		}
+		
+		usersService.create(user);
+
+		return "usercreated";
 	}
 }

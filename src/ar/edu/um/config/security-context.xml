@@ -25,9 +25,10 @@
 	
 		-->
 		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/resources/**" access="permitAll" />
 		<security:intercept-url pattern="/users" access="isAuthenticated()" />
 		<security:intercept-url pattern="/create" access="isAuthenticated()" />
-		<security:intercept-url pattern="/usercreated" access="isAuthenticated()" />
+		<security:intercept-url pattern="/usercreated" access="permitAll" />
 		<security:intercept-url pattern="/**" access="denyAll" />
 	
 		<!-- vamos a agregar un login -->
