@@ -13,19 +13,19 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>users</display-name>
-    <servlet-name>users</servlet-name>
+    <display-name>cursos</display-name>
+    <servlet-name>cursos</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>users</servlet-name>
+    <servlet-name>cursos</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <resource-ref>
     <description>DB Connection</description>
-    <res-ref-name>jdbc/users</res-ref-name>
+    <res-ref-name>jdbc/cursos</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
