@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.um.dao.Alumno;
 import ar.edu.um.dao.AlumnosDAO;
+import ar.edu.um.dao.Inscripcion;
 
 @Service("alumnosService")
 public class AlumnosService {
@@ -23,5 +24,8 @@ public class AlumnosService {
 		return alumnosDao.getAlumnos();
 
 	}
-
+	
+	public void create(Alumno alumno){
+		alumnosDao.create(alumno);
+	}
 }

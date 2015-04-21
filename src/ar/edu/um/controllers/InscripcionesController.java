@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ar.edu.um.dao.Alumno;
 import ar.edu.um.dao.Curso;
 import ar.edu.um.dao.Inscripcion;
+import ar.edu.um.service.AlumnosService;
 import ar.edu.um.service.InscripcionesService;
 
 @Controller
-public class InscripcionesControllar {
+public class InscripcionesController {
 
 	private InscripcionesService inscripcionesService;
+	private AlumnosService alumnosService;
 	
 	@Autowired
 	public void setInscripcionesService(InscripcionesService inscripcionesService) {
@@ -40,6 +42,7 @@ public class InscripcionesControllar {
 			return "registro";
 		}
 		/* habría que llenar la entidad usuario y a la vez la entidad inscripcion. Como hacer? */
+		alumnosService.create(alumno);
 		inscripcionesService.create(inscripcion);
 
 		return "ok";
