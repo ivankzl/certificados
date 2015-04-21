@@ -16,6 +16,9 @@
 	<div id="container">
 		<form class="form-signin">
 			<h2 class="form-signin-heading">Bienvenido</h2>
+			<p>
+				<a href="${pageContext.request.contextPath}/cursos">Inscribirse a un curso</a>
+			</p>
 	</div>
 </body>
 </html>
