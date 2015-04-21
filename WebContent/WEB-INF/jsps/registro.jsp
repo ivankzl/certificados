@@ -9,16 +9,11 @@
 	<head>
 	    
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="datepicker/css/datepicker.css"/>
+        <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.css"/>
        
 	</head>
 
 	<body>
-
-        <script src="jquery-1.8.3.js"></script>
-        <script src="resources/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-        <script src="datepicker/js/bootstrap-datepicker.js"></script>
     			
 		<header>
 			<title>Inscripción a Cursos</title>
@@ -30,71 +25,72 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                			<form:form class="myform" action="${pageContext.request.contextPath}/docreate" method="post" commandName="user">
+                			<form:form class="myform" action="${pageContext.request.contextPath}/registro" method="post" commandName="user">
 
                                 <div class="form-group">
                                     <label>Curso: </label>
                                 </div>
 
                                 <!-- TIPO DNI -->
-                                <div class="form-group">
-                                    <div class="btn-group"><a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Tipo DNI<span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>DNI</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <form:select path="alu_dni" items="${DNI-LIST}" />
+                                <select id="country" name="country">
+                                   <option value="US">United Stated</option>
+                                </select>
 
                                 <!-- Nro DOCUMENTO -->
             				    <div class="form-group">
             				        <label for="inputNumDoc">N° Documento</label>
-            				        <input type="text" class="form-control"  placeholder="N° Documento">
+            				        <input type="text" class="form-control" path="alu_dni" placeholder="N° Documento">
             				    </div>
 
                                 <!-- NOMBRE -->
             				    <div class="form-group">
             				        <label for="inputName">Nombre</label>
-            				        <input type="text" class="form-control"  placeholder="Nombre">
+            				        <input type="text" class="form-control"path="alu_nombre"  placeholder="Nombre">
             				    </div>
             				
                                 <!-- APELLIDO -->                
                                 <div class="form-group">
                                     <label for="inputApellido">Apellido</label>
-                                    <input type="text" class="form-control"  placeholder="Apellido">
+                                    <input type="text" class="form-control" path="alu_apellido" placeholder="Apellido">
                                 </div>
-
-            				     
+                                
+                                <!-- FECHA NACIMIENTO -->                
+                                <div class="form-group">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="date" class="form-control" path="alu_fechanac" name="Fecha de Nacimiento">
+                                </div>
+                                
                                 <!-- EMAIL -->                
                                 <div class="form-group">
                                     <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control"  placeholder="Email">
+                                    <input type="email" class="form-control" path="alu_email" placeholder="Email">
                                 </div>
 
                                 <!-- TELEFONO -->                
                                 <div class="form-group">
                                     <label for="inputTel">Telefono</label>
-                                    <input type="text" class="form-control"  placeholder="Telefono">
+                                    <input type="text" class="form-control" path="alu_telefono"  placeholder="Telefono">
                                 </div>
 
                                 <!-- DOMICILIO --> 
             				    <div class="form-group">
             				         <label for="inputDomicilio">Domicilio</label>
-            				         <input type="text" class="form-control" placeholder="Domicilio">
+            				         <input type="text" class="form-control" path="alu_domicilio" placeholder="Domicilio">
             				     </div>
 
                                 <!-- SEXO --> 
 
-                                <div class="form-group">
-                                    <div class="btn-group"><a class="btn btn-default dropdown-toggle btn-select2" 
-                                    data-toggle="dropdown">Sexo<span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>M</li>
-                                            <li>F</li>
-                                        </ul>
-                                    </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Sexo
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">F</a></li>
+                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">M</a></li>
+                                    </ul>
                                 </div>
 
-            				     <button type="submit" class="btn btn-primary">Enviar</button>
+            				    <button type="submit" class="btn btn-primary">Enviar</button>
             				
             				</form:form>
                         </div>
@@ -103,35 +99,8 @@
             </div>
         </div>
 
-    <script>
-            $(function() {
-                $('#dateOfBirthInput').datepicker();
-            });
-        </script>
-
-        <script type="text/javascript">
-            $(function() {
-                var yesButton = $("#yesbutton");
-                var progress = $("#doitprogress");      
-                
-                yesButton.click(function() {        
-                    yesButton.button("loading");
-
-                    var counter = 0;
-                    var countDown = function() {
-                        counter++;
-                        if (counter == 11) {
-                            yesButton.button("complete");
-                        } else {
-                            progress.width(counter * 10 + "%");
-                            setTimeout(countDown, 100);
-                        }
-                    };
-                    
-                    setTimeout(countDown, 100);
-                });
-                
-            });
-        </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	</body>	
+	
 </html>
