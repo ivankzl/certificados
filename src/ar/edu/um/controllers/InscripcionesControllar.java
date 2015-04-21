@@ -27,17 +27,17 @@ public class InscripcionesControllar {
 	}
 
 	
-	@RequestMapping("/registrarse")
+	@RequestMapping("/registro")
 	public String create(Model model) {
 		model.addAttribute("curso", new Curso());
-		return "registrarse";
+		return "registro";
 	}
 	
-	@RequestMapping(value="/doregistrarse", method=RequestMethod.POST)
+	@RequestMapping(value="/doregistro", method=RequestMethod.POST)
 	public String doCreate(Model model, @Valid Alumno alumno, Inscripcion inscripcion, BindingResult result) {
 		if (result.hasErrors()){
 			System.out.println("no se valido el formulario");
-			return "registrarse";
+			return "registro";
 		}
 		/* habría que llenar la entidad usuario y a la vez la entidad inscripcion. Como hacer? */
 		inscripcionesService.create(inscripcion);

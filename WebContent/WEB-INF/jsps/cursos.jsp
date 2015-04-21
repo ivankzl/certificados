@@ -57,7 +57,7 @@
 							<td>
 								<button type="button" class="btn btn-warning">
 									<p>
-										<a href="${pageContext.request.contextPath}/registracion">Inscribirse</a>
+										<a href="${pageContext.request.contextPath}/registro">Inscribirse</a>
 									</p>
 								</button>
 								
