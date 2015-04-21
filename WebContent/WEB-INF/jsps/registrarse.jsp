@@ -9,7 +9,7 @@
 	<head>
 	    
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
         <link rel="stylesheet" href="datepicker/css/datepicker.css"/>
        
 	</head>
@@ -17,7 +17,7 @@
 	<body>
 
         <script src="jquery-1.8.3.js"></script>
-        <script src="bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+        <script src="resources/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
         <script src="datepicker/js/bootstrap-datepicker.js"></script>
     			
 		<header>
@@ -63,13 +63,6 @@
                                     <input type="text" class="form-control"  placeholder="Apellido">
                                 </div>
 
-                                <!-- FECHA NACIMIENTO                
-                                <div class="form-group">
-                                    <label for="dateOfBirthInput" class="col-lg-3 control-label">Fecha Nacimiento</label>
-                                    <div class="date form_date col-lg-9" data-date-format="mm/dd/yyyy" data-date-viewmode="years">
-                                       <form:input type="text" class="form-control" path="dateOfBirth" id="dateOfBirthInput" placeholder="Fecha Nacimiento"/>
-                                    </div>
-                                </div>--> 
             				     
                                 <!-- EMAIL -->                
                                 <div class="form-group">
