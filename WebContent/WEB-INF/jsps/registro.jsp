@@ -75,7 +75,9 @@
                                     <label for="inputTel">Telefono</label>
                                     <input type="text" class="form-control"  placeholder="Telefono">
                                 </div>
+								
 
+<input type="date" name="fecha">
                                 <!-- DOMICILIO --> 
             				    <div class="form-group">
             				         <label for="inputDomicilio">Domicilio</label>

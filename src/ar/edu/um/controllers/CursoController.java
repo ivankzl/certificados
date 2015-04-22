@@ -25,7 +25,6 @@ public class CursoController {
 		this.cursosService = cursosService;
 	}
 	
-
 	/* muestra los cursos que hay en la BD */
 	@RequestMapping(value="/cursos")
 	public String showTest (Model model) {
