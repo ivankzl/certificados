@@ -44,6 +44,31 @@ public class CursosDAO {
 
 	}
 	
+	public Curso getCurso(int cur_id) {
+
+		MapSqlParameterSource params = new MapSqlParameterSource();
+		params.addValue("cur_id", cur_id);
+
+		return jdbc.queryForObject("select * from curso where cur_id = :cur_id", params, new RowMapper<Curso>() {
+
+					public Curso mapRow(ResultSet rs, int rowNum)
+							throws SQLException {
+
+						Curso curso = new Curso();
+						
+						curso.setCur_id(rs.getInt("cur_id"));
+						curso.setCur_titulo(rs.getString("cur_titulo"));
+						curso.setCur_descripcion(rs.getString("cur_descripcion"));
+						curso.setCur_inicio(rs.getDate("cur_inicio"));
+						curso.setCur_duracion(rs.getInt("cur_duracion"));
+						curso.setCur_profesor(rs.getString("cur_profesor"));
+						curso.setCur_url(rs.getString("cur_url"));
+						
+						return curso;
+					}
+
+				});
+	}
 	
 }
 	

@@ -25,9 +25,9 @@ public class InscripcionesService {
 		return inscripcionesDao.getInscripciones();
 
 	}
-	
+/*	
 	public void create(Inscripcion inscripcion){
 		inscripcionesDao.create(inscripcion);
 	}
-
+*/
 }

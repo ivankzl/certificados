@@ -1,140 +1,134 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 
 <!DOCTYPE html>
 <html>
-	<head>
-	    
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="datepicker/css/datepicker.css"/>
-       
-	</head>
+<head>
 
-	<body>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
+<link rel="stylesheet" href="datepicker/css/datepicker.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-        <script src="jquery-1.8.3.js"></script>
-        <script src="resources/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-        <script src="datepicker/js/bootstrap-datepicker.js"></script>
-    			
-		<header>
-			<title>Inscripción a Cursos</title>
+</head>
 
-        </header>
-    
-        <div class="col-lg-6 col-lg-offset-3">
-            <div class="well">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                			<form:form class="myform" action="${pageContext.request.contextPath}/docreate" method="post" commandName="user">
+<body>
 
-                                <div class="form-group">
-                                    <label>Curso: </label>
-                                </div>
+	<script src="jquery-1.8.3.js"></script>
+	<script src="resources/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
 
-                                <!-- TIPO DNI -->
-                                <div class="form-group">
-                                    <div class="btn-group"><a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Tipo DNI<span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>DNI</li>
-                                        </ul>
-                                    </div>
-                                </div>
+	<script type="text/javascript">
+		$('.selectpicker').selectpicker();
+	</script>
 
-                                <!-- Nro DOCUMENTO -->
-            				    <div class="form-group">
-            				        <label for="inputNumDoc">N° Documento</label>
-            				        <input type="text" class="form-control"  placeholder="N° Documento">
-            				    </div>
+	<header>
+		<title>Inscripción a Cursos</title>
+	</header>
 
-                                <!-- NOMBRE -->
-            				    <div class="form-group">
-            				        <label for="inputName">Nombre</label>
-            				        <input type="text" class="form-control"  placeholder="Nombre">
-            				    </div>
-            				
-                                <!-- APELLIDO -->                
-                                <div class="form-group">
-                                    <label for="inputApellido">Apellido</label>
-                                    <input type="text" class="form-control"  placeholder="Apellido">
-                                </div>
+	<div class="col-lg-6 col-lg-offset-3">
+		<div class="well">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<form:form class="myform"
+							action="${pageContext.request.contextPath}/crearegistro" method="post" commandName="alumno">
 
-            				     
-                                <!-- EMAIL -->                
-                                <div class="form-group">
-                                    <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control"  placeholder="Email">
-                                </div>
+							<div class="form-group">
+								<label>Curso: <c:out value="${cur_titulo}"></c:out></label>
+							</div>
 
-                                <!-- TELEFONO -->                
-                                <div class="form-group">
-                                    <label for="inputTel">Telefono</label>
-                                    <input type="text" class="form-control"  placeholder="Telefono">
-                                </div>
-								
+							<!-- TIPO DNI -->
+							<div class="form-group">
+								<div class="dropdown">
+									<label for="inputNumDoc">Tipo de Documento</label><br> 
+                                    <select class="form-control" id="sel1" value="hola" path="alu_doc_id" name="alu_doc_id">
+                                        <option value="NONE" label="Seleccione un tipo de Documento"></option>
+										<c:forEach var="documento" items="${documentos}">
+											<option value="${documento.doc_id}"><c:out value="${documento.doc_nombre}"></c:out></option>
+										</c:forEach>
+                                    </select>
+								</div>
+							</div>
 
-<input type="date" name="fecha">
-                                <!-- DOMICILIO --> 
-            				    <div class="form-group">
-            				         <label for="inputDomicilio">Domicilio</label>
-            				         <input type="text" class="form-control" placeholder="Domicilio">
-            				     </div>
+							<!-- Nro DOCUMENTO -->
+							<div class="form-group">
+								<label for="inputNumDoc">N° Documento</label> 
+								<input type="text"class="form-control" path="alu_dni" name="alu_dni" placeholder="N° Documento">
+							</div>
 
-                                <!-- SEXO --> 
+							<!-- NOMBRE -->
+							<div class="form-group">
+								<label for="inputName">Nombre</label> 
+								<input type="text" class="form-control" path="alu_nombre" name="alu_nombre" placeholder="Nombre">
+							</div>
 
-                                <div class="form-group">
-                                    <div class="btn-group"><a class="btn btn-default dropdown-toggle btn-select2" 
-                                    data-toggle="dropdown">Sexo<span class="caret"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>M</li>
-                                            <li>F</li>
-                                        </ul>
-                                    </div>
-                                </div>
+							<!-- APELLIDO -->
+							<div class="form-group">
+								<label for="inputApellido">Apellido</label> 
+								<input type="text" class="form-control" path="alu_apellido" name="alu_apellido" placeholder="Apellido">
+							</div>
 
-            				     <button type="submit" class="btn btn-primary">Enviar</button>
-            				
-            				</form:form>
-                        </div>
-       		       </div>
-            	</div><!--container-->
-            </div>
-        </div>
 
-    <script>
-            $(function() {
-                $('#dateOfBirthInput').datepicker();
-            });
-        </script>
+							<!-- EMAIL -->
+							<div class="form-group">
+								<label for="inputEmail">Email</label> 
+								<input type="email" class="form-control" path="alu_email" name="alu_email" placeholder="Email">
+							</div>
 
-        <script type="text/javascript">
-            $(function() {
-                var yesButton = $("#yesbutton");
-                var progress = $("#doitprogress");      
-                
-                yesButton.click(function() {        
-                    yesButton.button("loading");
+							<!-- TELEFONO -->
+							<div class="form-group">
+								<label for="inputTel">Telefono</label> 
+								<input type="text" class="form-control" path="alu_telefono" name="alu_telefono" placeholder="Telefono">
+							</div>
 
-                    var counter = 0;
-                    var countDown = function() {
-                        counter++;
-                        if (counter == 11) {
-                            yesButton.button("complete");
-                        } else {
-                            progress.width(counter * 10 + "%");
-                            setTimeout(countDown, 100);
-                        }
-                    };
-                    
-                    setTimeout(countDown, 100);
-                });
-                
-            });
-        </script>
-	</body>	
+
+							<!-- FECHA DE NACIMIENTO -->
+							<div class="form-group">
+								<label for="inputFechaNac">Fecha de Nacimiento</label> 
+								<input type="date" class="form-control" path="alu_fechanac" name="alu_fechanac">
+							</div>
+
+							<!-- DOMICILIO -->
+							<div class="form-group">
+								<label for="inputDomicilio">Domicilio</label> 
+								<input type="text" class="form-control" path="alu_domicilio" name="alu_domicilio" placeholder="Domicilio">
+							</div>
+
+							<!-- SEXO -->
+							<div class="form-group">
+								<div class="dropdown">
+									<label for="inputNumDoc">Sexo</label><br> 
+                                    <select class="form-control" id="sel1" path="alu_sexo" name="alu_sexo">
+                                        <option value="NONE" label="Seleccione un Sexo"></option>
+										<option value="M">Masculino</option>
+										<option value="F">Femenino</option>
+                                    </select>
+								</div>
+							</div>
+
+
+
+							<button type="submit" class="btn btn-primary">Enviar</button>
+
+						</form:form>
+					</div>
+				</div>
+			</div>
+			<!--container-->
+		</div>
+	</div>
+
+
+
+
+</body>
 </html>
 

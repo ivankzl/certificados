@@ -44,7 +44,7 @@ public class InscripcionesDAO {
 	}
 	
 	/*Crear una inscripcion nueva*/
-	@Transactional
+/*	@Transactional
 	public boolean create(Inscripcion inscripcion) {
 
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(inscripcion);
@@ -54,10 +54,10 @@ public class InscripcionesDAO {
 		 * la inscripcion! El DNI puede servir como clave primaria?????
 		 */
 		
-		jdbc.update("insert into alumno (alu_dni, alu_doc_id, alu_apellido, alu_nombre, alu_fechanac, alu_email, alu_telefono, alu_domicilio, alu_sexo) values (:alu_dni, :alu_doc_id, :alu_apellido, :alu_nombre, :alu_fechanac, :alu_email, :alu_telefono, :alu_domicilio, :alu_sexo)", params);
+/*		jdbc.update("insert into alumno (alu_dni, alu_doc_id, alu_apellido, alu_nombre, alu_fechanac, alu_email, alu_telefono, alu_domicilio, alu_sexo) values (:alu_dni, :alu_doc_id, :alu_apellido, :alu_nombre, :alu_fechanac, :alu_email, :alu_telefono, :alu_domicilio, :alu_sexo)", params);
 		
 		return jdbc.update("insert into inscripcion (ins_alu_id, ins_cur_id, ins_fecha) values (:ins_alu_id, :ins_cur_id, :ins_fecha)", params) == 1;
 
 	}
-
+*/
 }

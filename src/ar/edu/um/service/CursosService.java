@@ -23,4 +23,10 @@ public class CursosService {
 		return cursosDao.getCursos();
 
 	}
+	
+	public Curso getCurso(int cur_id) {
+
+		return cursosDao.getCurso(cur_id);
+
+	}
 }

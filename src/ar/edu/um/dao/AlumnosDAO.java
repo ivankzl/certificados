@@ -76,10 +76,10 @@ public class AlumnosDAO {
 	public boolean create(Alumno alumno) {
 
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(alumno);
-		return jdbc.update("insert into alumno (alu_dni, alu_doc_id, alu_nombre, alu_apellido, alu_fechanac, alu_email, alu_telefono, alu_domicilio) values (:alu_dni, :alu_doc_id, :alu_nombre, :alu_apellido, :alu_fechanac, :alu_email, :alu_telefono, :alu_domicilio)", params) == 1;
+		return jdbc.update("insert into alumno (alu_dni, alu_doc_id, alu_apellido, alu_nombre, alu_fechanac, alu_email, alu_telefono, alu_domicilio, alu_sexo) values (:alu_dni, :alu_doc_id, :alu_apellido, :alu_nombre, :alu_fechanac, :alu_email, :alu_telefono, :alu_domicilio, :alu_sexo)", params) == 1;
 
 	}
-	
+	 
 }
 
 	
