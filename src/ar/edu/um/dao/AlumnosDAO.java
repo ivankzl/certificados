@@ -34,7 +34,7 @@ public class AlumnosDAO {
 				alumno.setAlu_doc_id(rs.getInt("alu_doc_id"));
 				alumno.setAlu_nombre(rs.getString("alu_nombre"));
 				alumno.setAlu_apellido(rs.getString("alu_apellido"));
-				alumno.setAlu_fechanac(rs.getDate("alu_fechanac"));
+				alumno.setAlu_fechanac(rs.getString("alu_fechanac"));
 				alumno.setAlu_email(rs.getString("alu_email"));
 				alumno.setAlu_telefono(rs.getString("alu_telefono"));
 				alumno.setAlu_domicilio(rs.getString("alu_domicilio"));
@@ -45,12 +45,12 @@ public class AlumnosDAO {
 		});
 	}
 	
-	public Alumno getUser(int alu_dni) {
+	public Alumno getAlumno(int alu_dni, int alu_doc_id) {
 
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("alu_dni", alu_dni);
 
-		return jdbc.queryForObject("select * from alumno where alu_dni = :alu_dni", params, new RowMapper<Alumno>() {
+		return jdbc.queryForObject("select * from alumno where alu_dni = :alu_dni and alu_doc_id = :alu_doc_id", params, new RowMapper<Alumno>() {
 
 					public Alumno mapRow(ResultSet rs, int rowNum)
 							throws SQLException {
@@ -61,7 +61,7 @@ public class AlumnosDAO {
 						alumno.setAlu_doc_id(rs.getInt("alu_doc_id"));
 						alumno.setAlu_nombre(rs.getString("alu_nombre"));
 						alumno.setAlu_apellido(rs.getString("alu_apellido"));
-						alumno.setAlu_fechanac(rs.getDate("alu_fechanac"));
+						alumno.setAlu_fechanac(rs.getString("alu_fechanac"));
 						alumno.setAlu_email(rs.getString("alu_email"));
 						alumno.setAlu_telefono(rs.getString("alu_telefono"));
 						alumno.setAlu_domicilio(rs.getString("alu_domicilio"));

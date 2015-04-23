@@ -8,7 +8,10 @@ public class Alumno {
 	private int alu_doc_id;
 	private String alu_apellido;
 	private String alu_nombre;
-	private Date alu_fechanac;
+	private String alu_fechanac;
+	private int alu_dia;
+	private int alu_mes;
+	private int alu_anio;
 	private String alu_email;
 	private String alu_telefono;
 	private String alu_domicilio;
@@ -50,12 +53,36 @@ public class Alumno {
 		this.alu_nombre = alu_nombre;
 	}
 
-	public Date getAlu_fechanac() {
+	public String getAlu_fechanac() {
 		return alu_fechanac;
 	}
 
-	public void setAlu_fechanac(Date alu_fechanac) {
+	public void setAlu_fechanac(String alu_fechanac) {
 		this.alu_fechanac = alu_fechanac;
+	}
+
+	public int getAlu_dia() {
+		return alu_dia;
+	}
+
+	public void setAlu_dia(int alu_dia) {
+		this.alu_dia = alu_dia;
+	}
+
+	public int getAlu_mes() {
+		return alu_mes;
+	}
+
+	public void setAlu_mes(int alu_mes) {
+		this.alu_mes = alu_mes;
+	}
+
+	public int getAlu_anio() {
+		return alu_anio;
+	}
+
+	public void setAlu_anio(int alu_anio) {
+		this.alu_anio = alu_anio;
 	}
 
 	public String getAlu_email() {
@@ -94,12 +121,14 @@ public class Alumno {
 	public String toString() {
 		return "Alumno [alu_dni=" + alu_dni + ", alu_doc_id=" + alu_doc_id
 				+ ", alu_apellido=" + alu_apellido + ", alu_nombre="
-				+ alu_nombre + ", alu_fechanac=" + alu_fechanac
+				+ alu_nombre + ", alu_fechanac=" + alu_fechanac + ", alu_dia="
+				+ alu_dia + ", alu_mes=" + alu_mes + ", alu_anio=" + alu_anio
 				+ ", alu_email=" + alu_email + ", alu_telefono=" + alu_telefono
 				+ ", alu_domicilio=" + alu_domicilio + ", alu_sexo=" + alu_sexo
 				+ "]";
 	}
 	
 	
-	
+
 }
+
