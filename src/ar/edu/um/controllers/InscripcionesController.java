@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,16 +63,42 @@ public class InscripcionesController {
 	}
 	
 	@RequestMapping(value="/crearegistro", method=RequestMethod.POST)
+	public String creaRegistro(Model model, @Valid Alumno alumno, BindingResult result) {
+		/*if (result.hasErrors()){
+			System.out.println("no se valido el formulario");
+			
+			List<ObjectError> errors = result.getAllErrors();
+			
+			for (Object error: errors) {
+				System.out.println(error);
+			}
+			return "registro";
+		}
+		*/
+		alumnosService.create(alumno);
+		
+		return "crearegistro";
+	}
+	
+	
+	
+	
+	
+	
+	/*
+	@RequestMapping(value="/crearegistro", method=RequestMethod.POST)
 	public String creaRegistro(Model model, @Valid Alumno alumno, Inscripcion inscripcion, BindingResult result) {
 		if (result.hasErrors()){
 			System.out.println("no se valido el formulario");
 			return "registro";
 		}
-		/* habría que llenar la entidad usuario y a la vez la entidad inscripcion. Como hacer? */
+		System.out.println("nombre: " + alumno.getAlu_nombre());
+		System.out.println("apellido: " + alumno.getAlu_apellido());
+		// habría que llenar la entidad usuario y a la vez la entidad inscripcion. Como hacer? 
 		alumnosService.create(alumno);
 	//	ahora va a otro controlador que ingrese la base de datos;
 
-		return "registrocreado";
+		return "crearegistro";
 	}
-	
+	*/
 }

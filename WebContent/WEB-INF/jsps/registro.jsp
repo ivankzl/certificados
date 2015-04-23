@@ -38,8 +38,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<form:form class="myform"
-							action="${pageContext.request.contextPath}/crearegistro" method="post" commandName="alumno">
+						<form:form class="myform" method="post"
+							action="${pageContext.request.contextPath}/crearegistro" modelAttribute="alumno">
 
 							<div class="form-group">
 								<label>Curso: <c:out value="${cur_titulo}"></c:out></label>
