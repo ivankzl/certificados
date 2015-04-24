@@ -49,6 +49,7 @@ public class AlumnosDAO {
 
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("alu_dni", alu_dni);
+		params.addValue("alu_doc_id", alu_doc_id);
 
 		return jdbc.queryForObject("select * from alumno where alu_dni = :alu_dni and alu_doc_id = :alu_doc_id", params, new RowMapper<Alumno>() {
 
@@ -57,6 +58,7 @@ public class AlumnosDAO {
 
 						Alumno alumno = new Alumno();
 						
+						alumno.setAlu_id(rs.getInt("alu_id"));
 						alumno.setAlu_dni(rs.getInt("alu_dni"));
 						alumno.setAlu_doc_id(rs.getInt("alu_doc_id"));
 						alumno.setAlu_nombre(rs.getString("alu_nombre"));

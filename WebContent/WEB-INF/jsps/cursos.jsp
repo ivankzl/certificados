@@ -12,17 +12,12 @@
 </head>
 <body>
 
-	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-			<div align="center"><h2>LISTADO DE CURSOS</h2></div>
-				<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-1"></div>
-				</div>
-			</div>
-			<div class="panel-body">
-				<table class="table table-striped">
+	 <div class="container">
+            <img src="resources/imagenes/marca.png">
+            <div class="panel panel-default">
+            	<div class="panel-heading"><h3>Listado de Cursos</h3></div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Título</th>

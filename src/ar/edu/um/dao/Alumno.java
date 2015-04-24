@@ -25,6 +25,7 @@ public class Alumno {
 	@NotNull(message="Campo obligatorio")
 	private String alu_domicilio;
 	private String alu_sexo;
+	private int alu_id;
 	
 	public Alumno(){
 		
@@ -126,6 +127,14 @@ public class Alumno {
 		this.alu_sexo = alu_sexo;
 	}
 
+	public int getAlu_id() {
+		return alu_id;
+	}
+
+	public void setAlu_id(int alu_id) {
+		this.alu_id = alu_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Alumno [alu_dni=" + alu_dni + ", alu_doc_id=" + alu_doc_id
@@ -134,9 +143,9 @@ public class Alumno {
 				+ alu_dia + ", alu_mes=" + alu_mes + ", alu_anio=" + alu_anio
 				+ ", alu_email=" + alu_email + ", alu_telefono=" + alu_telefono
 				+ ", alu_domicilio=" + alu_domicilio + ", alu_sexo=" + alu_sexo
-				+ "]";
+				+ ", alu_id=" + alu_id + "]";
 	}
-	
+
 	
 
 }

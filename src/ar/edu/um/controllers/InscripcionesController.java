@@ -107,14 +107,17 @@ public class InscripcionesController {
 	    String strFecha = fecha.format(now);
 	    
 	    //System.out.println("Fecha actual: " + strFecha);
+	    
+	    Alumno alumno = new Alumno();
+	    alumno = alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id));
 
-		inscripcion.setIns_alu_id(Integer.parseInt(alu_dni));
+		inscripcion.setIns_alu_id(alumno.getAlu_id());
 		inscripcion.setIns_cur_id(Integer.parseInt(cur_id));
 		inscripcion.setIns_fecha(strFecha);
 		
 		System.out.println(inscripcion);
 		
-		//inscripcionesService.create(inscripcion);
+		inscripcionesService.create(inscripcion);
 		
 		return "registrado";
 	}
