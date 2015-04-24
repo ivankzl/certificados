@@ -1,13 +1,15 @@
 package ar.edu.um.dao;
 
-import java.util.Date;
+import java.sql.Date;
+
+
 
 public class Inscripcion {
 	
 	private int ins_alu_id; /* clave compuesta por ins_alu_id e ins_cur_id */
 	private int ins_cur_id;
 	private int ins_id;
-	private Date ins_fecha;
+	private String ins_fecha;
 
 	public Inscripcion(){
 		
@@ -37,11 +39,13 @@ public class Inscripcion {
 		this.ins_id = ins_id;
 	}
 
-	public Date getIns_fecha() {
+	
+
+	public String getIns_fecha() {
 		return ins_fecha;
 	}
 
-	public void setIns_fecha(Date ins_fecha) {
+	public void setIns_fecha(String ins_fecha) {
 		this.ins_fecha = ins_fecha;
 	}
 

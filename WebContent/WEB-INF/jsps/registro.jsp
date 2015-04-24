@@ -221,7 +221,8 @@
 								</div>
 							</div>
 
-							<input type="hidden" name="cur_id" value="{cur_id}">
+							<input type="hidden" name="cur_id" value="${cur_id}">
+							<input type="hidden" name="cur_titulo" value="${cur_titulo}">
 
 							<button type="submit" class="btn btn-primary">Enviar</button>
 

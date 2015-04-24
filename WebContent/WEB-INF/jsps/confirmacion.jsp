@@ -33,7 +33,7 @@
 									<input type="hidden" name="alu_dni" value="${alu_dni}">
 									<input type="hidden" name="alu_doc_id" value="${alu_doc_id}">
 									
-									¿Desea confirmar la inscripción?
+									¿Desea confirmar la inscripción para el curso <b><c:out value="${cur_titulo}"></c:out></<b>?
 		
 									<button type="submit" class="btn btn-primary">Confirmar</button>
 

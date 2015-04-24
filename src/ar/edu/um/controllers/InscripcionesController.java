@@ -1,5 +1,8 @@
 package ar.edu.um.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ar.edu.um.dao.Alumno;
 import ar.edu.um.dao.Curso;
 import ar.edu.um.dao.Documento;
+import ar.edu.um.dao.Inscripcion;
 import ar.edu.um.service.AlumnosService;
 import ar.edu.um.service.CursosService;
 import ar.edu.um.service.DocumentosService;
@@ -27,6 +31,7 @@ public class InscripcionesController {
 	private AlumnosService alumnosService;
 	private DocumentosService documentosService;
 	private CursosService cursosService;
+	private InscripcionesService inscripcionesService;
 	
 	
 	@Autowired
@@ -44,6 +49,11 @@ public class InscripcionesController {
 		this.cursosService = cursosService;
 	}
 
+	@Autowired
+	public void setInscripcionesService(InscripcionesService inscripcionesService) {
+		this.inscripcionesService = inscripcionesService;
+	}
+
 	@RequestMapping("/registro")
 	public String create(@RequestParam("cur_id") String cur_id, Model model) {
 		Curso curso = new Curso();
@@ -52,13 +62,12 @@ public class InscripcionesController {
 		model.addAttribute("cur_id", curso.getCur_id());
 		List<Documento> documentos = documentosService.getCurrent();
 		model.addAttribute("documentos", documentos);
-		System.out.println(documentos);
 		return "registro";
 		
 	}
 	
 	@RequestMapping(value="/crearegistro", method=RequestMethod.POST)
-	public String creaRegistro(Model model, @RequestParam String dia, @RequestParam String mes, @RequestParam String anio, @RequestParam String cur_id, @Valid Alumno alumno, BindingResult result) {
+	public String creaRegistro(Model model, @RequestParam String dia, @RequestParam String mes, @RequestParam String anio, @RequestParam String cur_id, @RequestParam String cur_titulo , @Valid Alumno alumno, BindingResult result) {
 		if (result.hasErrors()){
 			System.out.println("no se valido el formulario");
 			List<ObjectError> errors = result.getAllErrors();
@@ -72,25 +81,40 @@ public class InscripcionesController {
 		
 		String fecha = anio + "-" + mes + "-" + dia;
 		alumno.setAlu_fechanac(fecha);
-		System.out.println(fecha);
-		System.out.println(alumno);
+		//System.out.println(fecha);
+		//System.out.println(alumno);
 		alumnosService.create(alumno);
 		
 		model.addAttribute("alu_dni", alumno.getAlu_dni());
 		model.addAttribute("alu_doc_id", alumno.getAlu_doc_id());
 		model.addAttribute("cur_id", cur_id);
+		model.addAttribute("cur_titulo", cur_titulo);
 		
 		return "confirmacion";
 	}
 	
 	@RequestMapping(value="/registrado", method=RequestMethod.POST)
 	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id) {
-		
+	/*	
 		System.out.println("dni = " + alu_dni);
 		System.out.println("doc_id = " + alu_doc_id);
 		System.out.println("cur_id = " + cur_id);
+	*/	
+		Inscripcion inscripcion = new Inscripcion();
+
+		SimpleDateFormat fecha = new SimpleDateFormat("yyyy-MM-dd");
+		Date now = new Date();
+	    String strFecha = fecha.format(now);
+	    
+	    //System.out.println("Fecha actual: " + strFecha);
+
+		inscripcion.setIns_alu_id(Integer.parseInt(alu_dni));
+		inscripcion.setIns_cur_id(Integer.parseInt(cur_id));
+		inscripcion.setIns_fecha(strFecha);
 		
-		Alumno alumno = new Alumno();
+		System.out.println(inscripcion);
+		
+		//inscripcionesService.create(inscripcion);
 		
 		return "registrado";
 	}

@@ -1,19 +1,28 @@
 package ar.edu.um.dao;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class Alumno {
 	
+	@NotNull(message="Campo obligatorio")
 	private int alu_dni;
 	private int alu_doc_id;
+	@NotNull(message="Campo obligatorio")
+	@Size(min=5, max=45, message="El nombre debe tener entre 2 y 45 characters")
 	private String alu_apellido;
+	@NotNull(message="Campo obligatorio")
+	@Size(min=5, max=45, message="El apellido debe tener entre 2 y 45 characters")
 	private String alu_nombre;
 	private String alu_fechanac;
 	private int alu_dia;
 	private int alu_mes;
 	private int alu_anio;
+	@NotNull(message="Campo obligatorio")
 	private String alu_email;
+	@NotNull(message="Campo obligatorio")
 	private String alu_telefono;
+	@NotNull(message="Campo obligatorio")
 	private String alu_domicilio;
 	private String alu_sexo;
 	
