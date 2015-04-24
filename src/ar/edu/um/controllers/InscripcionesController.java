@@ -8,6 +8,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -33,6 +35,9 @@ public class InscripcionesController {
 	private CursosService cursosService;
 	private InscripcionesService inscripcionesService;
 	
+
+	 @Autowired
+	 private JavaMailSender mailSender;
 	
 	@Autowired
 	public void setAlumnosService(AlumnosService alumnosService) {
@@ -95,21 +100,21 @@ public class InscripcionesController {
 	
 	@RequestMapping(value="/registrado", method=RequestMethod.POST)
 	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id) {
-	/*	
-		System.out.println("dni = " + alu_dni);
-		System.out.println("doc_id = " + alu_doc_id);
-		System.out.println("cur_id = " + cur_id);
-	*/	
+
 		Inscripcion inscripcion = new Inscripcion();
 
 		SimpleDateFormat fecha = new SimpleDateFormat("yyyy-MM-dd");
 		Date now = new Date();
 	    String strFecha = fecha.format(now);
 	    
-	    //System.out.println("Fecha actual: " + strFecha);
-	    
 	    Alumno alumno = new Alumno();
 	    alumno = alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id));
+	    
+	    Documento documento = new Documento();
+	    documento = documentosService.getDocumento(Integer.parseInt(alu_doc_id));
+	    
+	    Curso curso = new Curso();
+	    curso = cursosService.getCurso(Integer.parseInt(cur_id));
 
 		inscripcion.setIns_alu_id(alumno.getAlu_id());
 		inscripcion.setIns_cur_id(Integer.parseInt(cur_id));
@@ -118,6 +123,24 @@ public class InscripcionesController {
 		System.out.println(inscripcion);
 		
 		inscripcionesService.create(inscripcion);
+		
+		
+		SimpleMailMessage email = new SimpleMailMessage();
+		email.setTo("ivankuzel@gmail.com");
+		email.setSubject("Nueva inscripción a Curso");
+		
+		String texto = "Se ha registrado una nueva inscripción con los siguientes datos:\n\n" + 
+		"Datos del Alumno:\n" + "Tipo de Documento: " + documento.getDoc_nombre() + "\nNro de Documento: " +
+		alumno.getAlu_dni() + "\nNombre y Apellido: " + alumno.getAlu_nombre() + " " + alumno.getAlu_apellido() + 
+		"\nDomicilio: " + alumno.getAlu_domicilio() + "\nEmail: " + alumno.getAlu_email() + "\nFecha de Nacimiento: "
+		+ alumno.getAlu_fechanac() + "\nTelefono: " + alumno.getAlu_telefono() + "\n\n" + 
+		"Datos del Curso en el cual se inscribió:\n" + "Nombre: " + curso.getCur_titulo() + "\nDescripción: "
+		+ curso.getCur_descripcion() + "\nProfesor: " + curso.getCur_profesor() + "\nFecha de Inicio: " + curso.getCur_inicio() + 
+		"\nDuración: " + curso.getCur_duracion() + "horas";
+		
+		email.setText(texto);
+		
+		mailSender.send(email);
 		
 		return "registrado";
 	}

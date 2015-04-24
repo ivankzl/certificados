@@ -38,6 +38,7 @@
     <param-value>
 			classpath:ar/edu/um/config/dao-context.xml
 			classpath:ar/edu/um/config/service-context.xml
+			classpath:ar/edu/um/config/mail-bean.xml
 
 		</param-value>
   </context-param>
