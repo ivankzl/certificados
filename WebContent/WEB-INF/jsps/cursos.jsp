@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,16 +12,17 @@
 </head>
 <body>
 
-	 <div class="container">
-            <img src="resources/imagenes/marca.png">
-            <div class="panel panel-default">
-            	<div class="panel-heading"><h3>Listado de Cursos</h3></div>
-                    <div class="panel-body">
-                        <table class="table table-striped">
+	<div class="container">
+		<img src="resources/imagenes/marca.png">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Listado de Cursos</h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Título</th>
-							<th>Descripción</th>
 							<th>Inicio</th>
 							<th>Duración</th>
 							<th>Profesor</th>
@@ -30,13 +31,11 @@
 					</thead>
 					<c:forEach var="curso" items="${cursos}">
 						<tr>
+
+							<td><p>
+									<span title="${curso.cur_descripcion}"><c:out value="${curso.cur_titulo}"></c:out></span>
+								</p></td>
 							
-							<td><p>
-									<c:out value="${curso.cur_titulo}"></c:out>
-								</p></td>
-							<td><p>
-									<c:out value="${curso.cur_descripcion}"></c:out>
-								</p></td>
 							<td><p>
 									<c:out value="${curso.cur_inicio}"></c:out>
 								</p></td>
@@ -52,10 +51,11 @@
 							<td>
 								<button type="button" class="btn btn-warning">
 									<p>
-										<a href="${pageContext.request.contextPath}/registro?cur_id=${curso.cur_id}">Inscribirse</a>
+										<a
+											href="${pageContext.request.contextPath}/registro?cur_id=${curso.cur_id}">Inscribirse</a>
 									</p>
 								</button>
-								
+
 							</td>
 						</tr>
 					</c:forEach>
