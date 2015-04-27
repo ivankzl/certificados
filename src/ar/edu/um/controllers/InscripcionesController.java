@@ -70,6 +70,42 @@ public class InscripcionesController {
 		
 	}
 	
+
+    /*---------- VERIFICACION DNI ----------*/
+   
+	@RequestMapping("/verificacion")
+	public String verificaRegistro(@RequestParam("cur_id") String cur_id, Model model) {
+		
+		List<Documento> documentos = documentosService.getCurrent();
+		model.addAttribute("documentos", documentos);
+
+		model.addAttribute("cur_id", cur_id);
+		System.out.println("CUR_ID: " + cur_id);
+
+		return "verificacion";
+		
+	}
+	
+    /*---------- CONTROL ----------*/
+   
+    @RequestMapping(value="/control", method=RequestMethod.POST)
+    public String creaRegistro(Model model, @RequestParam("cur_id") String cur_id, @RequestParam("alu_doc_id") String alu_doc_id, @RequestParam("alu_dni") String alu_dni){
+       
+    	model.addAttribute("cur_id", cur_id);
+		model.addAttribute("alu_doc_id", alu_doc_id);
+		model.addAttribute("alu_dni", alu_dni);
+		
+		System.out.println("CUR_ID: " + cur_id + "ALU_DNI: " + alu_dni);
+       
+        if(alu_dni!=null) {
+            return "cursos";
+        }else {
+            System.out.println("alumnosServices: " + alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id)));   
+            return "registro";
+        }
+       
+    }
+	
 	@RequestMapping(value="/crearegistro", method=RequestMethod.POST)
 	public String creaRegistro(Model model, @RequestParam String dia, @RequestParam String mes, @RequestParam String anio, @RequestParam String cur_id, @RequestParam String cur_titulo , @Valid Alumno alumno, BindingResult result) {
 		if (result.hasErrors()){

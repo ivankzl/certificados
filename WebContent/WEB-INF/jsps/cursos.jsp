@@ -49,12 +49,12 @@
 									<c:out value="${curso.cur_url}"></c:out>
 								</p></td>
 							<td>
-								<button type="button" class="btn btn-warning">
-									<p>
-										<a
-											href="${pageContext.request.contextPath}/registro?cur_id=${curso.cur_id}">Inscribirse</a>
-									</p>
-								</button>
+							
+								<a href="${pageContext.request.contextPath}/verificacion?cur_id=${curso.cur_id}">
+									<button type="button" class="btn btn-warning">
+										Inscribirse
+									</button>
+								</a>
 
 							</td>
 						</tr>
