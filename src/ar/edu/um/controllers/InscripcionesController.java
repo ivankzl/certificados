@@ -78,8 +78,8 @@ public class InscripcionesController {
 		
 		List<Documento> documentos = documentosService.getCurrent();
 		model.addAttribute("documentos", documentos);
-
 		model.addAttribute("cur_id", cur_id);
+		
 		System.out.println("CUR_ID: " + cur_id);
 
 		return "verificacion";
@@ -89,19 +89,28 @@ public class InscripcionesController {
     /*---------- CONTROL ----------*/
    
     @RequestMapping(value="/control", method=RequestMethod.POST)
-    public String creaRegistro(Model model, @RequestParam("cur_id") String cur_id, @RequestParam("alu_doc_id") String alu_doc_id, @RequestParam("alu_dni") String alu_dni){
+    public String control(Model model, @RequestParam("cur_id") String cur_id, @RequestParam("alu_doc_id") String alu_doc_id, @RequestParam("alu_dni") String alu_dni){
        
     	model.addAttribute("cur_id", cur_id);
 		model.addAttribute("alu_doc_id", alu_doc_id);
 		model.addAttribute("alu_dni", alu_dni);
 		
-		System.out.println("CUR_ID: " + cur_id + "ALU_DNI: " + alu_dni);
+		System.out.println("CUR_ID: " + cur_id + " ALU_DNI: " + alu_dni);
+		
+		Alumno alumno = new Alumno();
+		
+		alumno = alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id));
        
-        if(alu_dni!=null) {
-            return "cursos";
-        }else {
-            System.out.println("alumnosServices: " + alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id)));   
-            return "registro";
+		System.out.println("ALU: " + alumno + "\n");
+		
+		System.out.println("DNI " + alumno.getAlu_dni());
+		
+		if (alumno.getAlu_dni() == 0){
+        	System.out.println("No se encontró el documento en la BD");
+            return "registro?cur_id=" + cur_id;
+        }else{
+        	System.out.println("Sí se encontró el documento en la BD");
+            return "confirmacion";
         }
        
     }

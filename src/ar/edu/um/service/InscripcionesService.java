@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.um.dao.Alumno;
-import ar.edu.um.dao.AlumnosDAO;
 import ar.edu.um.dao.Inscripcion;
 import ar.edu.um.dao.InscripcionesDAO;
 
