@@ -57,7 +57,7 @@ public class InscripcionesController {
 	public void setInscripcionesService(InscripcionesService inscripcionesService) {
 		this.inscripcionesService = inscripcionesService;
 	}
-
+/*
 	@RequestMapping("/registro")
 	public String create(@RequestParam("cur_id") String cur_id, Model model) {
 		Curso curso = new Curso();
@@ -70,7 +70,7 @@ public class InscripcionesController {
 		
 	}
 	
-
+*/
     /*---------- VERIFICACION DNI ----------*/
    
 	@RequestMapping("/verificacion")
@@ -97,17 +97,16 @@ public class InscripcionesController {
 		
 		System.out.println("CUR_ID: " + cur_id + " ALU_DNI: " + alu_dni);
 		
-		Alumno alumno = new Alumno();
-		
-		alumno = alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id));
-       
-		System.out.println("ALU: " + alumno + "\n");
-		
-		System.out.println("DNI " + alumno.getAlu_dni());
-		
-		if (alumno.getAlu_dni() == 0){
+		if( alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id)) == null)
+       {
         	System.out.println("No se encontró el documento en la BD");
-            return "registro?cur_id=" + cur_id;
+        	Curso curso = new Curso();
+    		curso = cursosService.getCurso(Integer.parseInt(cur_id));
+    		model.addAttribute("cur_titulo", curso.getCur_titulo());
+    		model.addAttribute("cur_id", curso.getCur_id());
+    		List<Documento> documentos = documentosService.getCurrent();
+    		model.addAttribute("documentos", documentos);
+    		return "registro";
         }else{
         	System.out.println("Sí se encontró el documento en la BD");
             return "confirmacion";
