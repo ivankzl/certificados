@@ -57,20 +57,7 @@ public class InscripcionesController {
 	public void setInscripcionesService(InscripcionesService inscripcionesService) {
 		this.inscripcionesService = inscripcionesService;
 	}
-/*
-	@RequestMapping("/registro")
-	public String create(@RequestParam("cur_id") String cur_id, Model model) {
-		Curso curso = new Curso();
-		curso = cursosService.getCurso(Integer.parseInt(cur_id));
-		model.addAttribute("cur_titulo", curso.getCur_titulo());
-		model.addAttribute("cur_id", curso.getCur_id());
-		List<Documento> documentos = documentosService.getCurrent();
-		model.addAttribute("documentos", documentos);
-		return "registro";
-		
-	}
-	
-*/
+
     /*---------- VERIFICACION DNI ----------*/
    
 	@RequestMapping("/verificacion")

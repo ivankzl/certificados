@@ -43,8 +43,8 @@
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Tipo de Documento</label><br> 
-                                    <select class="form-control" id="sel1" value="hola" path="alu_doc_id" name="alu_doc_id">
-                                        <option value="NONE" label="Seleccione un tipo de Documento"></option>
+                                    <select class="form-control" id="sel1" value="" path="alu_doc_id" name="alu_doc_id"><form:errors cssClass="error" path="alu_doc_id"></form:errors>
+                                        <option value="" label="Seleccione un tipo de Documento"></option>
 										<c:forEach var="documento" items="${documentos}">
 											<option value="${documento.doc_id}"><c:out value="${documento.doc_nombre}"></c:out></option>
 										</c:forEach>
@@ -55,32 +55,32 @@
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
 								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" path="alu_dni" name="alu_dni" placeholder="N° Documento">
+								<input type="text"class="form-control" value = ""path="alu_dni" name="alu_dni" placeholder="N° Documento"><form:errors cssClass="error" path="alu_dni"></form:errors>
 							</div>
 
 							<!-- NOMBRE -->
 							<div class="form-group">
 								<label for="inputName">Nombre</label> 
-								<input type="text" class="form-control" path="alu_nombre" name="alu_nombre" placeholder="Nombre">
+								<input type="text" class="form-control" path="alu_nombre" name="alu_nombre" placeholder="Nombre"><form:errors cssClass="error" path="alu_nombre"></form:errors>
 							</div>
 
 							<!-- APELLIDO -->
 							<div class="form-group">
 								<label for="inputApellido">Apellido</label> 
-								<input type="text" class="form-control" path="alu_apellido" name="alu_apellido" placeholder="Apellido">
+								<input type="text" class="form-control" path="alu_apellido" name="alu_apellido" placeholder="Apellido"><form:errors cssClass="error" path="alu_apellido"></form:errors>
 							</div>
 
 
 							<!-- EMAIL -->
 							<div class="form-group">
 								<label for="inputEmail">Email</label> 
-								<input type="email" class="form-control" path="alu_email" name="alu_email" placeholder="Email">
+								<input type="email" class="form-control" path="alu_email" name="alu_email" placeholder="Email"><form:errors cssClass="error" path="alu_email"></form:errors>
 							</div>
 
 							<!-- TELEFONO -->
 							<div class="form-group">
 								<label for="inputTel">Telefono</label> 
-								<input type="text" class="form-control" path="alu_telefono" name="alu_telefono" placeholder="Telefono">
+								<input type="text" class="form-control" path="alu_telefono" name="alu_telefono" placeholder="Telefono"><form:errors cssClass="error" path="alu_telefono"></form:errors>
 							</div>
 
 
@@ -204,14 +204,14 @@
 							<!-- DOMICILIO -->
 							<div class="form-group">
 								<label for="inputDomicilio">Domicilio</label> 
-								<input type="text" class="form-control" path="alu_domicilio" name="alu_domicilio" placeholder="Domicilio">
+								<input type="text" class="form-control" path="alu_domicilio" name="alu_domicilio" placeholder="Domicilio"><form:errors cssClass="error" path="alu_domicilio"></form:errors>
 							</div>
 
 							<!-- SEXO -->
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Sexo</label><br> 
-                                    <select class="form-control" id="sel1" path="alu_sexo" name="alu_sexo">
+                                    <select class="form-control" id="sel1" path="alu_sexo" name="alu_sexo"><form:errors cssClass="error" path="alu_sexo"></form:errors>
                                         <option value="NONE" label="Seleccione un Sexo"></option>
 										<option value="M">Masculino</option>
 										<option value="F">Femenino</option>
