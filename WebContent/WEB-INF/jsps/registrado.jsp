@@ -13,6 +13,7 @@
 <body>
 
 	<div class="container">
+	<img src="resources/images/marca.png">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 			<div align="center"><h2>CONFIRMACIÓN DE INSCRIPCIÓN</h2></div>

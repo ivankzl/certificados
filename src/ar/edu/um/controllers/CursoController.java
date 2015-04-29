@@ -26,7 +26,7 @@ public class CursoController {
 	}
 	
 	/* muestra los cursos que hay en la BD */
-	@RequestMapping(value="/cursos")
+	@RequestMapping(value="/")
 	public String showTest (Model model) {
 
 		List<Curso> cursos = cursosService.getCurrent();

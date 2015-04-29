@@ -9,27 +9,18 @@
 <html>
 <head>
 
-<meta charset="UTF-8">
-<link rel="stylesheet"
-	href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<link rel="stylesheet"	href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
 
 </head>
 
 <body>
-
-	<script src="jquery-1.8.3.js"></script>
-	<script src="resources/bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-
-
 	<header>
 		<title>Ingrese su tipo y número de Documento</title>
 	</header>
 
 	<div class="col-lg-6 col-lg-offset-3">
+		<img src="resources/images/marca.png">
 		<div class="well">
 			<div class="container">
 				<div class="row">
@@ -64,15 +55,8 @@
 						</form:form>
 					</div>
 				</div>
-			</div>
-			<!--container-->
+			</div> <!--container-->
 		</div>
 	</div>
-
-
-
-
 </body>
 </html>
-
-</html></html>
