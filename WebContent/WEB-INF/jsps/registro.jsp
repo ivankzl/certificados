@@ -56,7 +56,7 @@
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
 								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" value = ""path="alu_dni" name="alu_dni" placeholder="N° Documento"><form:errors cssClass="error" path="alu_dni"></form:errors>
+								<input type="text"class="form-control" value = "" path="alu_dni" name="alu_dni" placeholder="N° Documento"><form:errors cssClass="error" path="alu_dni"></form:errors>
 							</div>
 
 							<!-- NOMBRE -->

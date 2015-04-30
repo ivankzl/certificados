@@ -94,9 +94,23 @@ public class InscripcionesController {
     		List<Documento> documentos = documentosService.getCurrent();
     		model.addAttribute("documentos", documentos);
     		return "registro";
-        }else{
+       
+       }else{
         	System.out.println("Sí se encontró el documento en la BD");
-            return "confirmacion";
+        	Alumno alumno = new Alumno();
+       
+        	alumno = alumnosService.getAlumno(Integer.parseInt(alu_dni), Integer.parseInt(alu_doc_id));
+        	
+        	//si el alumno nunca se inscribió en el curso
+        	if ( inscripcionesService.getInscripcion(alumno.getAlu_id(), Integer.parseInt(cur_id)) == null){
+        		System.out.println("el alumno nunca se inscribio en el curso");
+        		return "confirmacion";
+        	//si ya se inscribio
+        	}else{
+        		
+        		System.out.println("ya existe esa inscripcion");
+        		return "yaregistrado";
+        	}
         }
        
     }
@@ -156,7 +170,7 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-		email.setTo("ivankuzel@gmail.com");
+		email.setTo("lauragadea@gmail.com");
 		email.setSubject("Nueva inscripción a Curso");
 		
 		String texto = "Se ha registrado una nueva inscripción con los siguientes datos:\n\n" + 

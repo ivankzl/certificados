@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.edu.um.dao.Alumno;
 import ar.edu.um.dao.Inscripcion;
 import ar.edu.um.dao.InscripcionesDAO;
 
@@ -26,6 +27,13 @@ public class InscripcionesService {
 
 	public void create(Inscripcion inscripcion){
 		inscripcionesDao.create(inscripcion);
+	}
+	
+	public Inscripcion getInscripcion(int ins_alu_id, int ins_cur_id) {
+
+		return inscripcionesDao.getInscripcion(ins_alu_id, ins_cur_id);
+	
+
 	}
 
 }
