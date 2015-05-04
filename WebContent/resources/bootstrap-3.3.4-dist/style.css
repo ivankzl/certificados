@@ -9,6 +9,7 @@ Visit twitterbootstrap.org for more tut
 /* New styles */
 
 label.valid {
+	float: right;
 	width: 24px;
 	height: 24px;
 	background: url(assets/img/valid.png) center center no-repeat;

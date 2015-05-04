@@ -11,17 +11,20 @@ $(document).ready(
 
 							alu_dni : {
 								required : true,
-								required : true
+								required : true,
+								number: true
 							},
 
 							alu_nombre : {
 								required : true,
-								minlength : 2
+								minlength : 2,
+								maxlength: 40
 							},
 							
 							alu_apellido : {
 								required : true,
-								minlength : 2
+								minlength : 2,
+								maxlength: 40
 							},
 
 							alu_telefono : {

@@ -2592,9 +2592,10 @@ output {
   color: #555;
 }
 .form-control {
+  float:left;
   margin-bottom: 3px;
   display: block;
-  width: 100%;
+  width: 95%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;

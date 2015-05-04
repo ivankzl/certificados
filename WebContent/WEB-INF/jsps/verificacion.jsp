@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -11,6 +11,8 @@
 
 	<meta charset="UTF-8">
 	<link rel="stylesheet"	href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
+	<link rel="stylesheet"href="resources/bootstrap-3.3.4-dist/style.css" />
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -32,7 +34,7 @@
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Tipo de Documento</label><br> 
-                                    <select class="form-control" id="sel1" value="hola" path="alu_doc_id" name="alu_doc_id">
+                                    <select class="form-control" id="sel1" id="alu_doc_id" value="hola" path="alu_doc_id" name="alu_doc_id">
                                         <option value="NONE" label="Seleccione un tipo de Documento"></option>
 										<c:forEach var="documento" items="${documentos}">
 											<option value="${documento.doc_id}"><c:out value="${documento.doc_nombre}"></c:out></option>
@@ -44,7 +46,7 @@
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
 								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" path="alu_dni" name="alu_dni" placeholder="N° Documento">
+								<input type="text"class="form-control" path="alu_dni" id="alu_dni" name="alu_dni" placeholder="N° Documento">
 							</div>
 
 							
@@ -58,5 +60,18 @@
 			</div> <!--container-->
 		</div>
 	</div>
+	
+	<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery-1.7.1.min.js"></script> 
+	<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery.validate.js"></script> 
+	<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery.validate.min.js"></script> 
+	<script src="resources/bootstrap-3.3.4-dist/script.js"></script> 
+		 
+	<script>
+			addEventListener('load', prettyPrint, false);
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint linenums');
+				});
+	</script> 
+
 </body>
 </html>
