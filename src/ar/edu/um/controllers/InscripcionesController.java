@@ -74,13 +74,15 @@ public class InscripcionesController {
 	}
 	
     /*---------- CONTROL ----------*/
-   
     @RequestMapping(value="/control", method=RequestMethod.POST)
     public String control(Model model, @RequestParam("cur_id") String cur_id, @RequestParam("alu_doc_id") String alu_doc_id, @RequestParam("alu_dni") String alu_dni){
        
     	model.addAttribute("cur_id", cur_id);
 		model.addAttribute("alu_doc_id", alu_doc_id);
 		model.addAttribute("alu_dni", alu_dni);
+		
+		Documento documento = documentosService.getDocumento(Integer.parseInt(alu_doc_id));
+		model.addAttribute("doc_nom", documento.getDoc_nombre());
 		
 		System.out.println("CUR_ID: " + cur_id + " ALU_DNI: " + alu_dni);
 		

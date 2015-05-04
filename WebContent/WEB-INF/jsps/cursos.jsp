@@ -13,7 +13,7 @@
 <body>
 
 	<div class="container">
-		<img src="resources/imagenes/marca.png">
+		<img src="/resources/imagenes/marca.png">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3>Listado de Cursos</h3>

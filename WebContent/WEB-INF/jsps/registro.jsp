@@ -28,7 +28,7 @@
 	</header>
 
 	<div class="col-lg-6 col-lg-offset-3">
-	<img src="resources/images/marca.png">
+	<img src="/resources/imagenes/marca.png">
 		<div class="well">
 			<div class="container">
 				<div class="row">
@@ -45,10 +45,7 @@
 								<div class="dropdown">
 									<label for="inputNumDoc">Tipo de Documento</label><br> 
                                     <select class="form-control" id="sel1" value="" path="alu_doc_id" name="alu_doc_id"><form:errors cssClass="error" path="alu_doc_id"></form:errors>
-                                        <option value="" label="Seleccione un tipo de Documento"></option>
-										<c:forEach var="documento" items="${documentos}">
-											<option value="${documento.doc_id}"><c:out value="${documento.doc_nombre}"></c:out></option>
-										</c:forEach>
+                                        <option value="${alu_doc_id}" label="${doc_nom}"></option>
                                     </select>
 								</div>
 							</div>
@@ -56,7 +53,7 @@
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
 								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" value = "" path="alu_dni" name="alu_dni" placeholder="N° Documento"><form:errors cssClass="error" path="alu_dni"></form:errors>
+								<input type="text"class="form-control" value = "${alu_dni}" path="alu_dni" name="alu_dni" placeholder="${alu_dni}"><form:errors cssClass="error" path="alu_dni"></form:errors>
 							</div>
 
 							<!-- NOMBRE -->
