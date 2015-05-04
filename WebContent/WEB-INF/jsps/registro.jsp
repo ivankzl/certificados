@@ -10,8 +10,8 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
+<link rel="stylesheet"href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
+<link rel="stylesheet"href="resources/bootstrap-3.3.4-dist/style.css" />
 
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
@@ -33,7 +33,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<form:form class="myform" method="post"
+						<form:form id="registration-form" class="form-horizontal" method="post"
 							action="${pageContext.request.contextPath}/crearegistro" modelAttribute="alumno">
 
 							<div class="form-group">
@@ -44,7 +44,7 @@
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Tipo de Documento</label><br> 
-                                    <select class="form-control" id="sel1" value="" path="alu_doc_id" name="alu_doc_id"><form:errors cssClass="error" path="alu_doc_id"></form:errors>
+                                    <select class="form-control" id="sel1" value="" path="alu_doc_id" id="alu_doc_id" name="alu_doc_id"><form:errors cssClass="error" path="alu_doc_id"></form:errors>
                                         <option value="${alu_doc_id}" label="${doc_nom}"></option>
                                     </select>
 								</div>
@@ -53,32 +53,32 @@
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
 								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" value = "${alu_dni}" path="alu_dni" name="alu_dni" placeholder="${alu_dni}"><form:errors cssClass="error" path="alu_dni"></form:errors>
+								<input type="text"class="form-control" value = "${alu_dni}" path="alu_dni" id="alu_dni" name="alu_dni" placeholder="${alu_dni}"><form:errors cssClass="error" path="alu_dni"></form:errors>
 							</div>
 
 							<!-- NOMBRE -->
 							<div class="form-group">
 								<label for="inputName">Nombre</label> 
-								<input type="text" class="form-control" path="alu_nombre" name="alu_nombre" placeholder="Nombre"><form:errors cssClass="error" path="alu_nombre"></form:errors>
+								<input type="text" id="alu_nombre" class="form-control" path="alu_nombre" name="alu_nombre" placeholder="Nombre"><form:errors cssClass="error" path="alu_nombre"></form:errors>
 							</div>
 
 							<!-- APELLIDO -->
 							<div class="form-group">
 								<label for="inputApellido">Apellido</label> 
-								<input type="text" class="form-control" path="alu_apellido" name="alu_apellido" placeholder="Apellido"><form:errors cssClass="error" path="alu_apellido"></form:errors>
+								<input type="text" class="form-control" id="alu_apellido" path="alu_apellido" name="alu_apellido" placeholder="Apellido"><form:errors cssClass="error" path="alu_apellido"></form:errors>
 							</div>
 
 
 							<!-- EMAIL -->
 							<div class="form-group">
 								<label for="inputEmail">Email</label> 
-								<input type="email" class="form-control" path="alu_email" name="alu_email" placeholder="Email"><form:errors cssClass="error" path="alu_email"></form:errors>
+								<input type="email" class="form-control" id="alu_email" path="alu_email" name="alu_email" placeholder="Email"><form:errors cssClass="error" path="alu_email"></form:errors>
 							</div>
 
 							<!-- TELEFONO -->
 							<div class="form-group">
 								<label for="inputTel">Telefono</label> 
-								<input type="text" class="form-control" path="alu_telefono" name="alu_telefono" placeholder="Telefono"><form:errors cssClass="error" path="alu_telefono"></form:errors>
+								<input type="text" class="form-control" id="alu_telefono" path="alu_telefono" name="alu_telefono" placeholder="Telefono"><form:errors cssClass="error" path="alu_telefono"></form:errors>
 							</div>
 
 
@@ -86,7 +86,7 @@
 							<div class="form-group">
 								<label for="inputFechaNac">Fecha de Nacimiento</label> 
 									
-									<select class="form-control" name="dia">
+									<select class="form-control" id="dia" name="dia">
 										<option> - Dia - </option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -121,7 +121,7 @@
 										<option value="31">31</option>
 									</select>
 									
-									<select class="form-control" name="mes">
+									<select class="form-control" id="mes" name="mes">
 										<option> - Mes - </option>
 										<option value="01">Enero</option>
 										<option value="02">Febrero</option>
@@ -137,7 +137,7 @@
 										<option value="12">Diciembre</option>
 									</select>
 									
-									<select class="form-control"  name="anio">
+									<select class="form-control" id="anio" name="anio">
 										<option> - Año - </option>
 										<option value="2001">2001</option>
 										<option value="2000">2000</option>
@@ -202,14 +202,14 @@
 							<!-- DOMICILIO -->
 							<div class="form-group">
 								<label for="inputDomicilio">Domicilio</label> 
-								<input type="text" class="form-control" path="alu_domicilio" name="alu_domicilio" placeholder="Domicilio"><form:errors cssClass="error" path="alu_domicilio"></form:errors>
+								<input type="text" class="form-control" path="alu_domicilio" id="alu_domicilio "name="alu_domicilio" placeholder="Domicilio"><form:errors cssClass="error" path="alu_domicilio"></form:errors>
 							</div>
 
 							<!-- SEXO -->
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Sexo</label><br> 
-                                    <select class="form-control" id="sel1" path="alu_sexo" name="alu_sexo"><form:errors cssClass="error" path="alu_sexo"></form:errors>
+                                    <select class="form-control" id="sel1" path="alu_sexo" id="alu_sexo" name="alu_sexo"><form:errors cssClass="error" path="alu_sexo"></form:errors>
                                         <option value="NONE" label="Seleccione un Sexo"></option>
 										<option value="M">Masculino</option>
 										<option value="F">Femenino</option>
@@ -229,7 +229,17 @@
 		</div>
 	</div>
 
-
+<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery-1.7.1.min.js"></script> 
+<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery.validate.js"></script> 
+<script src="resources/bootstrap-3.3.4-dist/assets/js/jquery.validate.min.js"></script> 
+<script src="resources/bootstrap-3.3.4-dist/script.js"></script> 
+	 
+<script>
+		addEventListener('load', prettyPrint, false);
+		$(document).ready(function(){
+		$('pre').addClass('prettyprint linenums');
+			});
+</script> 
 
 
 </body>
