@@ -28,7 +28,7 @@
 	</header>
 
 	<div class="col-lg-6 col-lg-offset-3">
-	<img src="/resources/imagenes/marca.png">
+	<img src="resources/imagenes/marca.png">
 		<div class="well">
 			<div class="container">
 				<div class="row">
@@ -219,7 +219,6 @@
 
 							<input type="hidden" name="cur_id" value="${cur_id}">
 							<input type="hidden" name="cur_titulo" value="${cur_titulo}">
-
 							<button type="submit" class="btn btn-primary">Enviar</button>
 
 						</form:form>

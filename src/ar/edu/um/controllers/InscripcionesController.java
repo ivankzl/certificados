@@ -182,7 +182,7 @@ public class InscripcionesController {
 		+ alumno.getAlu_fechanac() + "\nTelefono: " + alumno.getAlu_telefono() + "\n\n" + 
 		"Datos del Curso en el cual se inscribió:\n" + "Nombre: " + curso.getCur_titulo() + "\nDescripción: "
 		+ curso.getCur_descripcion() + "\nProfesor: " + curso.getCur_profesor() + "\nFecha de Inicio: " + curso.getCur_inicio() + 
-		"\nDuración: " + curso.getCur_duracion() + "horas";
+		"\nDuración: " + curso.getCur_duracion() + " horas";
 		
 		email.setText(texto);
 		

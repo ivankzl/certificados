@@ -16,11 +16,8 @@
 	<img src="resources/images/marca.png">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-			<div align="center"><h2>INSCRIPCIÓN DUPLICADA</h2></div>
-				<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-1"></div>
-				</div>
+			<div class="panel-heading">
+				<div class="contenido2"><h1 class="universidadFondo">Error</h1></div>	
 			</div>
 			<div class="panel-body">
 				Ocurrió un error inesperado. Por favor vuelta a intentarlo.

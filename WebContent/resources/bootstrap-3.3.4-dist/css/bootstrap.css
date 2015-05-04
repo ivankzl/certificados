@@ -1756,6 +1756,11 @@ padding-bottom: 20px;
 .col-xs-push-6 {
   left: 50%;
 }
+
+.invalid{
+	border-color: #E9322D!important;
+box-shadow: 0 0 6px #F8B9B7!important;
+}
 .col-xs-push-5 {
   left: 41.66666667%;
 }
@@ -3518,6 +3523,31 @@ tbody.collapse.in {
   right: 0;
   left: auto;
 }
+
+
+.contenido2 {
+  padding: 15px;
+  padding-bottom: 30px;
+}
+.contenido2 h1 {
+  font-size: 40px;
+  font-family: 'Archivo Narrow',sans-serif;
+  line-height: 44px;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px;
+  color: #FFFFFF;
+  padding: 50px;
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.universidadFondo {
+  background-color: #536AA9;
+}
+
+
+
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;

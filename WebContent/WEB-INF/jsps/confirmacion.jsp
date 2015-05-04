@@ -18,11 +18,7 @@
 	<img src="resources/images/marca.png">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-			<div align="center"><h2>CONFIRMACIÓN DE INSCRIPCIÓN</h2></div>
-				<div class="row">
-					<div class="col-md-10"></div>
-					<div class="col-md-1"></div>
-				</div>
+				<div class="contenido2"><h1 class="universidadFondo">Confirmación de Inscripción</h1></div>	
 			</div>
 			<div class="panel-body">
 			

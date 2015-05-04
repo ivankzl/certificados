@@ -20,7 +20,7 @@
 	</header>
 
 	<div class="col-lg-6 col-lg-offset-3">
-		<img src="../resources/images/marca.png">
+		<img src="resources/images/marca.png">
 		<div class="well">
 			<div class="container">
 				<div class="row">
