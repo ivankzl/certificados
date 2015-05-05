@@ -118,7 +118,7 @@ public class InscripcionesController {
     }
 	
 	@RequestMapping(value="/crearegistro", method=RequestMethod.POST)
-	public String creaRegistro(Model model, @RequestParam String dia, @RequestParam String mes, @RequestParam String anio, @RequestParam String cur_id, @RequestParam String cur_titulo , @Valid Alumno alumno, BindingResult result) {
+	public String creaRegistro(Model model, @RequestParam String dia, @RequestParam String mes, @RequestParam String anio, @RequestParam String cur_id , @Valid Alumno alumno, BindingResult result) {
 		if (result.hasErrors()){
 			System.out.println("no se valido el formulario");
 			List<ObjectError> errors = result.getAllErrors();
@@ -132,14 +132,15 @@ public class InscripcionesController {
 		
 		String fecha = anio + "-" + mes + "-" + dia;
 		alumno.setAlu_fechanac(fecha);
-		//System.out.println(fecha);
+		Curso curso = new Curso();
+		curso = cursosService.getCurso(Integer.parseInt(cur_id));
+		model.addAttribute("cur_titulo", curso.getCur_titulo());
 		//System.out.println(alumno);
 		alumnosService.create(alumno);
 		
 		model.addAttribute("alu_dni", alumno.getAlu_dni());
 		model.addAttribute("alu_doc_id", alumno.getAlu_doc_id());
 		model.addAttribute("cur_id", cur_id);
-		model.addAttribute("cur_titulo", cur_titulo);
 		
 		return "confirmacion";
 	}
@@ -172,7 +173,7 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-		email.setTo("lauragadea@gmail.com");
+		email.setTo("ivankuzel@gmail.com");
 		email.setSubject("Nueva inscripción a Curso");
 		
 		String texto = "Se ha registrado una nueva inscripción con los siguientes datos:\n\n" + 

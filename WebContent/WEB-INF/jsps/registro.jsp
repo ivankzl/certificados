@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"href="resources/bootstrap-3.3.4-dist/css/bootstrap.css" />
 <link rel="stylesheet"href="resources/bootstrap-3.3.4-dist/style.css" />
-
+ <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,700italic,400italic">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
@@ -44,16 +44,16 @@
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Tipo de Documento</label><br> 
-                                    <select class="form-control" id="sel1" value="" path="alu_doc_id" id="alu_doc_id" name="alu_doc_id"><form:errors cssClass="error" path="alu_doc_id"></form:errors>
-                                        <option value="${alu_doc_id}" label="${doc_nom}"></option>
-                                    </select>
+                                    <c:out value="${doc_nom}"></c:out>
+                                    <input path="alu_doc_id" id="alu_doc_id" type="hidden" name="alu_doc_id" value="${alu_doc_id}">
 								</div>
 							</div>
 
 							<!-- Nro DOCUMENTO -->
 							<div class="form-group">
-								<label for="inputNumDoc">N° Documento</label> 
-								<input type="text"class="form-control" value = "${alu_dni}" path="alu_dni" id="alu_dni" name="alu_dni" placeholder="${alu_dni}"><form:errors cssClass="error" path="alu_dni"></form:errors>
+								<label for="inputNumDoc">N° Documento</label> <br>
+								<c:out value="${alu_dni}">${alu_dni}</c:out>
+                                <input path="alu_dni" id="alu_dni" type="hidden" name="alu_dni" value="${alu_dni}">
 							</div>
 
 							<!-- NOMBRE -->
@@ -243,5 +243,35 @@
 
 
 </body>
+<footer>
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="well">
+                    <div class="row">  
+
+                        <div class="col-lg-12">
+                          
+                            <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                             <a class="enlace" target="_blank" href="https://mail.um.edu.ar/horde3/imp/">Webmail</a>
+                                        </div>
+                                    </div>   
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                           <a class="enlace" target="_blank" href="/es/mapa-sitio.html?lang=es">Mapa del Sitio</a>
+                                        </div>
+                                    </div>
+                               
+                            </div>                
+                           
+                            <div class="col-md-7">
+                                    <p>Boulogne Sur Mer 683. CP 5500. Mendoza, Argentina
+                                    Teléfonos: 54 261 4202017. Fax: 54 261 4202017 (Opción 9)</p>
+                            </div>
+                        </div><!--col-6-->
+                    </div>
+                </div><!--well-->
+            </div>           
+        </footer> 
 </html>
 

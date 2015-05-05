@@ -1393,6 +1393,63 @@ a.text-warning:hover {
 a.text-danger:hover {
   color: #843534;
 }
+
+
+footer .well {
+  min-height: 20px;
+  padding: 13px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          margin-top: 20px;
+  box-shadow: 1px 16px 21px rgba(0, 0, 0, 0.6);
+  height: 110px;
+}
+
+.enlace:hover,
+.enlace:visited:hover {
+    color: #FFF;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration: none;
+    font-family: "Archivo Narrow",sans-serif;
+    width: 175px;
+    height: 25px;
+    display: block;
+    font-weight: normal;
+    text-align: center;
+    background-color: #8599B1;
+    padding-top: 7px;
+}
+
+.enlace,
+.enlace:link,
+.enlace:active,
+.enlace:visited {
+    color: #FFF;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration: none;
+    font-family: "Archivo Narrow",sans-serif;
+    width: 175px;
+    height: 30px;
+    display: block;
+    font-weight: normal;
+    text-align: center;
+    background-color: #647D9C;
+    padding-top: 7px;
+    margin-top: 8px;
+}
+
+.col-md-7>p{
+  text-align: center;
+  margin-top: 10px;
+}
+
 .bg-primary {
   color: #fff;
   background-color: #337ab7;
