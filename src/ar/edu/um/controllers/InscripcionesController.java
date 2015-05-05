@@ -173,17 +173,20 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-		email.setTo("ivankuzel@gmail.com");
+	//	email.setTo("german.vazquez@um.edu.ar");
+		email.setTo("daniel.quinteros@um.edu.ar");
+		email.setTo("ivan.kuzel@um.edu.com");
 		email.setSubject("Nueva inscripción a Curso");
 		
-		String texto = "Se ha registrado una nueva inscripción con los siguientes datos:\n\n" + 
+		String texto = "Este es un mensaje automático del sistema de Cursos de Educación a Distancia:\n\n" + 
+		"Se ha registrado una nueva inscripción con los siguientes datos:\n\n" + 
 		"Datos del Alumno:\n" + "Tipo de Documento: " + documento.getDoc_nombre() + "\nNro de Documento: " +
 		alumno.getAlu_dni() + "\nNombre y Apellido: " + alumno.getAlu_nombre() + " " + alumno.getAlu_apellido() + 
 		"\nDomicilio: " + alumno.getAlu_domicilio() + "\nEmail: " + alumno.getAlu_email() + "\nFecha de Nacimiento: "
 		+ alumno.getAlu_fechanac() + "\nTelefono: " + alumno.getAlu_telefono() + "\n\n" + 
 		"Datos del Curso en el cual se inscribió:\n" + "Nombre: " + curso.getCur_titulo() + "\nDescripción: "
 		+ curso.getCur_descripcion() + "\nProfesor: " + curso.getCur_profesor() + "\nFecha de Inicio: " + curso.getCur_inicio() + 
-		"\nDuración: " + curso.getCur_duracion() + " horas";
+		"\nDuración: " + curso.getCur_duracion() + " horas\n\nDepartamento de Tecnología.";
 		
 		email.setText(texto);
 		

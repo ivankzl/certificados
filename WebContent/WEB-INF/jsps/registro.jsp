@@ -194,6 +194,23 @@
 										<option value="1949">1949</option>
 										<option value="1948">1948</option>
 										<option value="1947">1947</option>
+										<option value="1946">1946</option>
+										<option value="1945">1945</option>
+										<option value="1944">1944</option>
+										<option value="1943">1943</option>
+										<option value="1942">1942</option>
+										<option value="1941">1941</option>
+										<option value="1940">1940</option>
+										<option value="1939">1939</option>
+										<option value="1938">1938</option>
+										<option value="1937">1937</option>
+										<option value="1936">1936</option>
+										<option value="1935">1935</option>
+										<option value="1934">1934</option>
+										<option value="1933">1933</option>
+										<option value="1932">1932</option>
+										<option value="1931">1931</option>
+										<option value="1930">1930</option>
 										
 									</select>
 									
