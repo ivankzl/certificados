@@ -225,8 +225,8 @@
 							<div class="form-group">
 								<div class="dropdown">
 									<label for="inputNumDoc">Sexo</label><br> 
-                                    <select class="form-control" id="sel1" path="alu_sexo" id="alu_sexo" name="alu_sexo"><form:errors cssClass="error" path="alu_sexo"></form:errors>
-                                        <option value="NONE" label="Seleccione un Sexo"></option>
+                                    <select class="form-control" path="alu_sexo" id="alu_sexo" name="alu_sexo"><form:errors cssClass="error" path="alu_sexo"></form:errors>
+                                        <option value="" label="Seleccione un Sexo"></option>
 										<option value="M">Masculino</option>
 										<option value="F">Femenino</option>
                                     </select>
