@@ -1678,6 +1678,27 @@ padding-bottom: 20px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.verific {
+  padding-right: 30px;
+  padding-left: 35px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#verific {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.container {
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .form-signin {
     max-width: 330px;
     padding: 1px 25px 23px 25px;

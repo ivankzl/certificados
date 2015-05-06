@@ -174,8 +174,8 @@ public class InscripcionesController {
 		
 		SimpleMailMessage email = new SimpleMailMessage();
 	//	email.setTo("german.vazquez@um.edu.ar");
-		email.setTo("daniel.quinteros@um.edu.ar");
-		email.setTo("ivan.kuzel@um.edu.com");
+	//	email.setTo("daniel.quinteros@um.edu.ar");
+		email.setTo("ivan.kuzel@um.edu.ar");
 		email.setSubject("Nueva inscripción a Curso");
 		
 		String texto = "Este es un mensaje automático del sistema de Cursos de Educación a Distancia:\n\n" + 
