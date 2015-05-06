@@ -1123,7 +1123,7 @@ td > a {
 }
 
 a {
-  color: #fff;
+  color: rgb(76, 142, 250);
   text-decoration: none;
 }
 a:hover,

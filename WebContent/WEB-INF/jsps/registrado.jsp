@@ -22,7 +22,7 @@
 			<div class="panel-body">
 				<p>Usted fue inscripto correctamente. En los próximos días recibirá la chequera en su email. </p><br>
 				<p>
-					<a href="${pageContext.request.contextPath}/cursos"> Volver a
+					<a href="${pageContext.request.contextPath}/"> Volver a
 						cursos</a>
 				</p>
 			</div>
