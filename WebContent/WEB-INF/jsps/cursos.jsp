@@ -53,8 +53,8 @@
 								</td>
 								
 								<td>
-									<a href="${curso.cur_url}">
-										<p><c:out value="${curso.cur_url}"></c:out></p>
+									<a href="http://${curso.cur_url}">
+									<c:out value="${curso.cur_url}"></c:out>
 									</a>
 								</td>
 								
