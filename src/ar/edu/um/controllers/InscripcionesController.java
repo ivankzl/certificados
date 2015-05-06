@@ -173,8 +173,8 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-	//	email.setTo("german.vazquez@um.edu.ar");
-	//	email.setTo("daniel.quinteros@um.edu.ar");
+		email.setTo("german.vazquez@um.edu.ar");
+		email.setTo("daniel.quinteros@um.edu.ar");
 		email.setTo("ivan.kuzel@um.edu.ar");
 		email.setSubject("Nueva inscripción a Curso");
 		
