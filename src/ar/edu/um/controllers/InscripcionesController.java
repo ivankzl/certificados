@@ -141,12 +141,13 @@ public class InscripcionesController {
 		model.addAttribute("alu_dni", alumno.getAlu_dni());
 		model.addAttribute("alu_doc_id", alumno.getAlu_doc_id());
 		model.addAttribute("cur_id", cur_id);
+		model.addAttribute("alu_email", alumno.getAlu_email());
 		
 		return "confirmacion";
 	}
 	
 	@RequestMapping(value="/registrado", method=RequestMethod.POST)
-	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id) {
+	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id, @RequestParam("alu_email") String alu_email) {
 
 		Inscripcion inscripcion = new Inscripcion();
 
@@ -173,9 +174,13 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
+
 		email.setTo("german.vazquez@um.edu.ar");
-		email.setTo("daniel.quinteros@um.edu.ar");
-		email.setTo("ivan.kuzel@um.edu.ar");
+		email.setCc("daniel.quinteros@um.edu.ar");
+		email.setCc("blanca.castagnolo@um.edu.ar");
+		email.setCc(alu_email);
+		email.setBcc("ivan.kuzel@um.edu.ar");
+		
 		email.setSubject("Nueva inscripción a Curso");
 		
 		String texto = "Este es un mensaje automático del sistema de Cursos de Educación a Distancia:\n\n" + 

@@ -35,6 +35,7 @@
 					<input type="hidden" name="cur_id" value="${cur_id}">
 					<input type="hidden" name="alu_dni" value="${alu_dni}">
 					<input type="hidden" name="alu_doc_id" value="${alu_doc_id}">
+					<input type="hidden" name="alu_email" value="${alu_email}">
 					
 					<p>				
 									¿Desea confirmar la inscripción para el curso <b><c:out
