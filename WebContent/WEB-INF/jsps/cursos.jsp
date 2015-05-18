@@ -54,7 +54,7 @@
 								
 								<td>
 									<a href="http://${curso.cur_url}">
-									<c:out value="${curso.cur_url}"></c:out>
+									<c:out value="Ir al sitio"></c:out>
 									</a>
 								</td>
 								
