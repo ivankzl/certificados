@@ -59,9 +59,14 @@
 								</td>
 								
 								<td>
-									<a href="${pageContext.request.contextPath}/verificacion?cur_id=${curso.cur_id}">
-										<button type="button" class="btn btn-warning">Inscribirse</button>
-									</a>
+
+  									<c:if test="${curso.cur_habilitado == 1 }">
+ 										<a href="${pageContext.request.contextPath}/verificacion?cur_id=${curso.cur_id}"><button type="button" class="btn btn-warning">   Inscribirse</button></a>
+  									</c:if>
+                                    <c:if test="${curso.cur_habilitado == 0 }">
+										<c:out value="En sitio web"></c:out>  									
+									</c:if>
+   
 								</td>
 							</tr>
 						</c:forEach>

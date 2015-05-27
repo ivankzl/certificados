@@ -150,7 +150,14 @@ public class InscripcionesController {
 	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id, @RequestParam("alu_email") String alu_email) {
 
 		Inscripcion inscripcion = new Inscripcion();
-
+		String[] listOfMails = new String[5];
+		//listOfMails[0] = "german.vazquez@um.edu.ar";
+		//listOfMails[1] = "daniel.quinteros@um.edu.ar";
+		//listOfMails[2] = "blanca.castagnolo@um.edu.ar";
+		//listOfMails[3] = "ivan.kuzel@um.edu.ar";
+		listOfMails[0] = "ivan.kuzel@um.edu.ar";
+		listOfMails[1] = "laura.gadea@um.edu.ar";
+		
 		SimpleDateFormat fecha = new SimpleDateFormat("yyyy-MM-dd");
 		Date now = new Date();
 	    String strFecha = fecha.format(now);
@@ -174,12 +181,8 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-
-		email.setTo("german.vazquez@um.edu.ar");
-		email.setCc("daniel.quinteros@um.edu.ar");
-		email.setCc("blanca.castagnolo@um.edu.ar");
-		email.setCc(alu_email);
-		email.setBcc("ivan.kuzel@um.edu.ar");
+		listOfMails[2] = alu_email;
+		email.setBcc(listOfMails);
 		
 		email.setSubject("Nueva inscripción a Curso");
 		

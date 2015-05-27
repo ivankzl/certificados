@@ -10,6 +10,7 @@ public class Curso {
 	private int cur_duracion;
 	private String cur_profesor;
 	private String cur_url;
+	private int cur_habilitado;
 	
 	public Curso() {
 		
@@ -21,6 +22,16 @@ public class Curso {
 
 	public void setCur_id(int cur_id) {
 		this.cur_id = cur_id;
+	}
+	
+	
+
+	public int getCur_habilitado() {
+		return cur_habilitado;
+	}
+
+	public void setCur_habilitado(int cur_habilitado) {
+		this.cur_habilitado = cur_habilitado;
 	}
 
 	public String getCur_titulo() {

@@ -36,6 +36,7 @@ public class CursosDAO {
 				curso.setCur_duracion(rs.getInt("cur_duracion"));
 				curso.setCur_profesor(rs.getString("cur_profesor"));
 				curso.setCur_url(rs.getString("cur_url"));
+				curso.setCur_habilitado(rs.getInt("cur_habilitado"));
 				
 				return curso;
 			}
@@ -63,6 +64,7 @@ public class CursosDAO {
 						curso.setCur_duracion(rs.getInt("cur_duracion"));
 						curso.setCur_profesor(rs.getString("cur_profesor"));
 						curso.setCur_url(rs.getString("cur_url"));
+						curso.setCur_habilitado(rs.getInt("cur_habilitado"));
 						
 						return curso;
 					}
