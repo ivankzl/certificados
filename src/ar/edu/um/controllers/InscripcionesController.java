@@ -1,6 +1,7 @@
 package ar.edu.um.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -150,13 +151,6 @@ public class InscripcionesController {
 	public String confirmaRegistro(Model model, @RequestParam("alu_dni") String alu_dni, @RequestParam("alu_doc_id") String alu_doc_id,  @RequestParam("cur_id") String cur_id, @RequestParam("alu_email") String alu_email) {
 
 		Inscripcion inscripcion = new Inscripcion();
-		String[] listOfMails = new String[5];
-		//listOfMails[0] = "german.vazquez@um.edu.ar";
-		//listOfMails[1] = "daniel.quinteros@um.edu.ar";
-		//listOfMails[2] = "blanca.castagnolo@um.edu.ar";
-		//listOfMails[3] = "ivan.kuzel@um.edu.ar";
-		listOfMails[0] = "ivan.kuzel@um.edu.ar";
-		listOfMails[1] = "laura.gadea@um.edu.ar";
 		
 		SimpleDateFormat fecha = new SimpleDateFormat("yyyy-MM-dd");
 		Date now = new Date();
@@ -181,9 +175,10 @@ public class InscripcionesController {
 		
 		
 		SimpleMailMessage email = new SimpleMailMessage();
-		listOfMails[2] = alu_email;
-		email.setBcc(listOfMails);
+	
 		
+		String[]  listOfMails = { "german.vazquez@um.edu.ar", "daniel.quinteros@um.edu.ar", "blanca.castagnolo@um.edu.ar", "laura.gadea@um.edu.ar", "ivan.kuzel@um.edu.ar", alu_email};
+		email.setTo(listOfMails);
 		email.setSubject("Nueva inscripción a Curso");
 		
 		String texto = "Este es un mensaje automático del sistema de Cursos de Educación a Distancia:\n\n" + 
